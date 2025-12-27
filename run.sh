@@ -26,4 +26,4 @@ echo "Training complete!"
 echo "To test the model, run: python predictGenre.py" 
 echo " Test audio files are in the testSample folder."
 
-python predictGenre.py
+#python predictGenre.py

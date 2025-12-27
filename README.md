@@ -43,57 +43,11 @@ git clone https://github.com/zzenish/Nepali-Music-Genre-Classification-CNN.git
 cd Nepali-Music-Genre-Classification-CNN/cnn
 ```
 
-2. Create and activate a virtual environment
+2. Run run.sh
 
 ```bash
-python3 -m venv myenv
-# On macOS / Linux
-source myenv/bin/activate
-# On Windows (PowerShell)
-myenv\Scripts\Activate.ps1
-```
-
-3. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-4. Prepare dataset
-
-Place your audio files in `datasets/` organized by genre:
-
-```
-datasets/
-├── Gazal/
-├── POP/
-├── Lokdohori/
-└── Nephop/
-```
-
-Run preprocessing to generate spectrograms:
-    If you cloned the repo, skip preprocessing!
-
-```bash
-python audioProcessing.py
-```
-
-5. Split the dataset
-
-```bash
-python splitDatasets.py
-```
-
-6. Train the model
-
-```bash
-python trainModel.py
-```
-
-7. Predict genre for a new audio file
-
-```bash
-python predictGenre.py path/to/audio_file.wav
+chmod +x run.sh
+. run.sh
 ```
 
 ## 🧠 Model Architecture

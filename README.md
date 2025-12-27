@@ -1,0 +1,121 @@
+# Nepali-Music-Genre-Classification-CNN
+Classifying Nepali music genres (POP, GAZAL, LOK DOHORI, NEPHOP) using CNN.
+=======
+# Nepali Music Genre Classification using CNN 🎶
+
+This project applies **Convolutional Neural Networks (CNNs)** to classify Nepali music into four genres:
+- Pop
+- Gazal
+- Lok Dohori
+- Nephop
+
+The model is trained on spectrograms generated from audio files, enabling it to learn frequency and temporal patterns unique to each genre.
+
+---
+
+## 📂 Project Structure
+
+Repository (inside `cnn/`):
+
+```
+cnn/
+├── datasets/            # Main dataset folder (not included in repo, ~94GB)
+│   ├── Gazal/
+│   ├── POP/
+│   ├── Lokdohori/
+│   └── Nephop/
+├── audioProcessing.py    # Preprocessing: convert audio to spectrograms
+├── splitDatasets.py      # Split dataset into train/test sets
+├── trainModel.py         # Train CNN model
+├── predictGenre.py       # Predict genre for new audio input
+├── requirements.txt      # Python dependencies
+└── README.md             # Project documentation
+```
+
+---
+
+## ⚙️ Setup Instructions
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/zzenish/Nepali-Music-Genre-Classification-CNN.git
+cd Nepali-Music-Genre-Classification-CNN/cnn
+```
+
+2. Create and activate a virtual environment
+
+```bash
+python3 -m venv myenv
+# On macOS / Linux
+source myenv/bin/activate
+# On Windows (PowerShell)
+myenv\Scripts\Activate.ps1
+```
+
+3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Prepare dataset
+
+Place your audio files in `datasets/` organized by genre:
+
+```
+datasets/
+├── Gazal/
+├── POP/
+├── Lokdohori/
+└── Nephop/
+```
+
+Run preprocessing to generate spectrograms:
+    If you cloned the repo, skip preprocessing!
+
+```bash
+python audioProcessing.py
+```
+
+5. Split the dataset
+
+```bash
+python splitDatasets.py
+```
+
+6. Train the model
+
+```bash
+python trainModel.py
+```
+
+7. Predict genre for a new audio file
+
+```bash
+python predictGenre.py path/to/audio_file.wav
+```
+
+## 🧠 Model Architecture
+
+Input: Spectrogram images of audio files
+
+Typical layers used in this project:
+
+- Convolutional layers + ReLU
+- Max pooling layers
+- Dropout (to reduce overfitting)
+- Dense (fully connected) layers
+- Output: Softmax with 4 classes (Pop, Gazal, Lok Dohori, Nephop)
+
+## 🚀 Future Work
+
+- Add more genres (e.g., Classical, Modern Rock)
+- Experiment with deeper CNNs or transfer learning (ResNet, VGG)
+- Deploy as a web app for real-time classification
+
+## 📚 References
+
+- [Stanford CS-230 — CNN Cheatsheet](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)
+- [Librosa — audio and music analysis in Python](https://librosa.org/)
+- [TensorFlow/Keras documentation](https://www.tensorflow.org/)

@@ -1,0 +1,8 @@
+yt-dlp
+ffmpeg
+numpy
+librosa
+matplotlib
+ipython
+scikit-learn
+tensorflow[and-cuda]

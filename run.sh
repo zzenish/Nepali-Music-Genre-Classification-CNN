@@ -13,6 +13,8 @@ pip install --upgrade pip
 echo "Installing requirements..."
 pip install -r requirements.txt
 
+#python audioProcessing.py #Uncomment this line if you have your own dataset! Might require some other adjustments! If you cloned thsi project, leave it commented!
+
 echo "Generating Random test data in testSample..."
 python generateSampleAudio.py
 
